@@ -24,7 +24,7 @@ const Navbar = () => {
 		<nav
 			className={
 				scrolling
-					? 'shadow-md bg-primary sticky top-0 z-50  h-20 flex items-center'
+					? 'shadow-md bg-primary sticky top-0  h-20 flex items-center z-10'
 					: ' sticky top-0 z-50  h-20 flex items-center'
 			}
 		>
@@ -32,10 +32,13 @@ const Navbar = () => {
 				<div className="flex justify-between items-center">
 					<div className="flex items-center flex-shrink-0">
 						<img className="h-10 w-10 mr-2" src={logo} alt="logo" />
-						<span className="text-xl tracking-tight">
+						<button
+							className="text-2xl tracking-tight font-bold font-roboto-condensed"
+							onClick={() => scrollInto('home')}
+						>
 							<span className="text-button">Cars</span>
 							Spot
-						</span>
+						</button>
 					</div>
 					<ul className="hidden lg:flex ml-14 space-x-12 font-roboto-flex">
 						{navItems.map((item, index) => (

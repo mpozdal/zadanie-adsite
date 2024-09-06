@@ -10,7 +10,7 @@ const Hero = () => {
 				alt="background"
 				className="absolute -z-50 right-20 top-0"
 			/>
-			<div className="container mx-auto px-4 lg:max-w-[1440px]">
+			<div className="container mx-auto px-4 lg:max-w-[1440px] ">
 				<div className="flex flex-col ">
 					<div className="text-7xl text-secondary text-center lg:text-start font-bebas-neue ">
 						<p>{heroData.title.split(' ').slice(0, 2).join(' ')}</p>
@@ -38,7 +38,7 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-			<div className="absolute right-0 bottom-20 -z-10 object-fit-scale-down hidden lg:flex max-w-[1400px]">
+			<div className="absolute right-0  bottom-20 -z-10 object-fit-scale-down hidden lg:flex max-w-[1400px]">
 				<img src={Image} alt="cars" className="" />
 			</div>
 		</div>

@@ -10,22 +10,25 @@ import { carsType, mainSectionText } from '../constants';
 var settings = {
 	dots: true,
 	infinite: true,
-	speed: 500,
+	speed: 1000,
 	slidesToShow: 2,
 	slidesToScroll: 1,
-	autoplaySpeed: 2000,
+	autoplaySpeed: 3000,
+	cssEase: 'linear',
 	autoplay: true,
 	arrows: false,
+
 	responsive: [
 		{
 			breakpoint: 1080,
 			settings: {
+				cssEase: 'linear',
 				dots: true,
 				infinite: true,
-				speed: 500,
+				speed: 1000,
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				autoplaySpeed: 2000,
+				autoplaySpeed: 3000,
 				autoplay: true,
 				arrows: false,
 			},
@@ -36,44 +39,50 @@ const MainSection = () => {
 	const [option, setOption] = useState(1);
 
 	return (
-		<div className="w-full" id="mainSection">
-			<header className="container flex flex-col  justify-center items-start m-auto px-4  lg:max-w-[1440px]">
+		<div
+			className="w-full h-[calc(100vh-5rem)] py-20 flex flex-col  "
+			id="mainSection"
+		>
+			<header className="container flex flex-col   m-auto px-4  lg:max-w-[1440px] ">
 				<p className="text-button text-xl font-roboto-condensed">
 					{mainSectionText.text}
 				</p>
-				<h1 className="text-5xl pt-1 font-bebas-neue">
+				<h1 className="text-5xl  font-bebas-neue">
 					{mainSectionText.title}
 				</h1>
-				<div className="flex gap-10 pt-10 font-bold">
+				<div className="flex gap-10 py-10 font-bold">
 					{carsType.map((item) => (
 						<button
-						onClick={() => setOption(item.id)}
-						className={
-							option === item.id
-								? 'text-button border-b-2 border-button '
-								: 'text-black border-b-2 border-primary'
-						}
-					>
-						{item.name}
-					</button>
+							onClick={() => setOption(item.id)}
+							className={
+								option === item.id
+									? 'text-button border-b-2 border-button '
+									: 'text-black border-b-2 border-primary'
+							}
+						>
+							{item.name}
+						</button>
 					))}
-					
 				</div>
 			</header>
-			<section className="container mx-auto py-10 px-4 lg:max-w-[1440px]">
+			<section className="container m-auto px-4  lg:max-w-[1440px]">
 				<div className="">
 					{option === 1 && (
-						<div className="w-full ">
-							<Slider {...settings} className="text-center">
-								<img src={Car} className="w-full " alt="car1" />
+						<div className="w-full">
+							<Slider {...settings} className="-mx-5 ">
+								<img
+									src={Car}
+									className="w-full px-5"
+									alt="car1"
+								/>
 								<img
 									src={Car2}
-									className="w-full "
+									className="w-full px-5"
 									alt="car1"
 								/>
 								<img
 									src={Car3}
-									className="w-full "
+									className="w-full px-5 "
 									alt="car1"
 								/>
 							</Slider>
@@ -81,20 +90,20 @@ const MainSection = () => {
 					)}
 					{option === 2 && (
 						<div className="w-full">
-							<Slider {...settings} className="text-center">
+							<Slider {...settings} className="text-center -mx-5">
 								<img
 									src={Car4}
-									className="max-w-full "
+									className="max-w-full px-5"
 									alt="car1"
 								/>
 								<img
 									src={Car5}
-									className="max-w-full"
+									className="max-w-full px-5"
 									alt="car1"
 								/>
 								<img
 									src={Car6}
-									className="max-w-full"
+									className="max-w-full px-5"
 									alt="car1"
 								/>
 							</Slider>

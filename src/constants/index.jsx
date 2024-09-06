@@ -20,17 +20,29 @@ export const carsType = [
 ];
 export const seoData = {
 	btn: {
-		rozwin: "Rozwiń",
-		zwin: "Zwiń"
+		rozwin: 'Rozwiń',
+		zwin: 'Zwiń',
 	},
 	title: 'Id nostrud enim esse consectetur in eu mollit fugiat aute. Velit nulla commodo.',
-	short: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae fuga dolorum facere aliquid odit dicta sapiente aut maiores quam, ducimus, voluptatum nostrum laborum. Sed debitis ipsa vel eaque perspiciatis nemo nostrum ad vitae facilis. Ab optio accusantium rem sunt impedit veniam explicabo soluta [...]',
-	desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae fuga dolorum facere aliquid odit dicta sapiente aut maiores quam, ducimus, voluptatum nostrum laborum. Sed debitis ipsa vel eaque perspiciatis nemo nostrum ad vitae facilis. Ab optio accusantium rem sunt impedit veniam explicabo soluta dicta. Libero, sunt? Quasi recusandae quia modi similique itaque odit dolorum soluta facere quidem, accusantium asperiores, numquam nesciunt laboriosam doloribus aspernatur voluptatem ducimus culpa dignissimos explicabo necessitatibus esse? Tempore nesciunt consequuntur aut optio, commodi omnis consectetur adipisci perferendis fugit. Exercitationem!',
+	short: 'Mauris varius ipsum mauris, rutrum lobortis magna efficitur a. Donec egestas, nisl vehicula feugiat ornare, diam turpis efficitur mi, ac venenatis eros ipsum ac arcu. Vestibulum et  [...]',
+	desc: 'Mauris varius ipsum mauris, rutrum lobortis magna efficitur a. Donec egestas, nisl vehicula feugiat ornare, diam turpis efficitur mi, ac venenatis eros ipsum ac arcu. Vestibulum et.  Mauris varius ipsum mauris, rutrum lobortis magna efficitur a. Donec egestas, nisl vehicula feugiat ornare, diam turpis efficitur mi, ac venenatis eros ipsum ac arcu. Vestibulum et. Mauris varius ipsum mauris, rutrum lobortis magna efficitur a. Donec egestas, nisl vehicula feugiat ornare, diam turpis efficitur mi, ac venenatis eros ipsum ac arcu. Vestibulum et.',
 };
 
 export function scrollInto(id) {
-	const element = document.getElementById(id);
-	element?.scrollIntoView({
-		behavior: 'smooth',
-	});
+	if (id === 'faq') {
+		window.scrollTo({
+			top: 2 * window.innerHeight - 160,
+			behavior: 'smooth',
+		});
+	} else if (id === 'mainSection') {
+		window.scrollTo({
+			top: window.innerHeight - 80,
+			behavior: 'smooth',
+		});
+	} else if (id === 'home') {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	}
 }

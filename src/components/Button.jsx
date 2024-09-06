@@ -13,7 +13,7 @@ export const Button = ({ text, secondary, primary, href }) => {
 			)}
 			{secondary && (
 				<a
-					className="button bg-white  text-button hover:opacity-50"
+					className="button  bg-white  text-button hover:opacity-50"
 					href="tel:+48790222491"
 				>
 					{text}

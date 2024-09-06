@@ -15,7 +15,7 @@ const SEO = () => {
 						{showMoreFirst ? seoData.desc : seoData.short}
 					</p>
 					<button
-						className="border-b-2 w-fit py-1"
+						className="border-b-2 w-fit py-1 font-roboto-condensed "
 						onClick={() => setShowMoreFirst(!showMoreFirst)}
 					>
 						{showMoreFirst ? seoData.btn.zwin : seoData.btn.rozwin}
@@ -31,7 +31,7 @@ const SEO = () => {
 
 					<p>{showMoreSecond ? seoData.desc : seoData.short}</p>
 					<button
-						className="border-b-2 w-fit py-1"
+						className="border-b-2 w-fit py-1 font-roboto-condensed"
 						onClick={() => setShowMoreSecond(!showMoreSecond)}
 					>
 						{showMoreSecond ? seoData.btn.zwin : seoData.btn.rozwin}
