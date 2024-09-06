@@ -1,12 +1,12 @@
 import React from 'react';
 
-export const Button = ({ text, href, secondary, primary }) => {
+export const Button = ({ text, secondary, primary, href }) => {
 	return (
 		<>
 			{primary && (
 				<a
+					href="tel:+48790222491"
 					className="button bg-button text-white hover:opacity-50"
-					href={href}
 				>
 					{text}
 				</a>
@@ -14,7 +14,7 @@ export const Button = ({ text, href, secondary, primary }) => {
 			{secondary && (
 				<a
 					className="button bg-white  text-button hover:opacity-50"
-					href={href}
+					href="tel:+48790222491"
 				>
 					{text}
 				</a>

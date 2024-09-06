@@ -9,11 +9,11 @@ import Preloader from './components/Preloader';
 function App() {
 	return (
 		<>
-			<Preloader />
-			<div className="h-screen relative">
-				<Navbar />
-				<Hero />
-			</div>
+			{/* <Preloader /> */}
+
+			<Navbar />
+			<Hero />
+
 			<MainSection />
 			<SEO />
 			<Footer />

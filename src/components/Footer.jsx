@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
 	return (
 		<div className="w-full bg-secondary border-t-2">
-			<div className="container flex flex-col py-10 lg:flex-row  justify-between items-center md:max-w-[1480px] m-auto max-w-[600px] text-white text-sm">
+			<div className="container flex flex-row py-10 px-4 lg:flex-row  justify-between items-center m-auto  text-white text-sm lg:max-w-[1440px]">
 				<span>Cars Spot</span>
 				<button className="underline">Polityka prywatnosci</button>
 			</div>

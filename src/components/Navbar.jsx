@@ -1,5 +1,5 @@
 import logo from '../assets/logo.svg';
-import { navItems } from '../constants';
+import { navItems, scrollInto } from '../constants';
 import { Button } from './Button';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
@@ -10,8 +10,8 @@ const Navbar = () => {
 		setMobileDrawerOpen(!mobileDrawerOpen);
 	};
 	return (
-		<nav className="sticky top-0 z-50 py-3 bg-primary">
-			<div className="container px-4 mx-auto relative text-sm ">
+		<nav className=" top-0 z-50  h-20 flex items-center ">
+			<div className="container m-auto w-full px-4  lg:max-w-[1440px]">
 				<div className="flex justify-between items-center">
 					<div className="flex items-center flex-shrink-0">
 						<img className="h-10 w-10 mr-2" src={logo} alt="logo" />
@@ -23,12 +23,14 @@ const Navbar = () => {
 					<ul className="hidden lg:flex ml-14 space-x-12 font-roboto-flex">
 						{navItems.map((item, index) => (
 							<li key={index}>
-								<a href={item.href}>{item.label}</a>
+								<button onClick={() => scrollInto(item.id)}>
+									{item.label}
+								</button>
 							</li>
 						))}
 					</ul>
 					<div className="hidden lg:flex justify-center space-x-12 items-center">
-						<Button text="Zadzwon do nas" primary />
+						<Button text="Zadzwon do nas" primary phone />
 					</div>
 					<div className="lg:hidden md:flex flex-col justify-end">
 						<button onClick={toggleNavbar}>
@@ -37,11 +39,18 @@ const Navbar = () => {
 					</div>
 				</div>
 				{mobileDrawerOpen && (
-					<div className="fixed right-0 z-20 text-black bg-white w-full p-12 flex flex-col justify-center items-center lg:hidden">
+					<div className="fixed  z-40 right-0  text-black bg-primary w-full p-12 flex flex-col justify-center items-center lg:hidden">
 						<ul className="text-center">
 							{navItems.map((item, index) => (
 								<li key={index} className="py-4">
-									<a href={item.href}>{item.label}</a>
+									<button
+										onClick={() => {
+											scrollInto(item.id);
+											setMobileDrawerOpen(false);
+										}}
+									>
+										{item.label}
+									</button>
 								</li>
 							))}
 						</ul>
