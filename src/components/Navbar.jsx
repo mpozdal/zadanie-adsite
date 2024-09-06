@@ -1,16 +1,33 @@
 import logo from '../assets/logo.svg';
-import { navItems, scrollInto } from '../constants';
+import { btnText, navItems, scrollInto } from '../constants';
 import { Button } from './Button';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const Navbar = () => {
 	const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+	const [scrolling, setScrolling] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
+	function handleScroll() {
+		if (window.scrollY > 20) setScrolling(true);
+		else setScrolling(false);
+	}
 
 	const toggleNavbar = () => {
 		setMobileDrawerOpen(!mobileDrawerOpen);
 	};
 	return (
-		<nav className=" top-0 z-50  h-20 flex items-center ">
+		<nav
+			className={
+				scrolling
+					? 'shadow-md bg-primary sticky top-0 z-50  h-20 flex items-center'
+					: ' sticky top-0 z-50  h-20 flex items-center'
+			}
+		>
 			<div className="container m-auto w-full px-4  lg:max-w-[1440px]">
 				<div className="flex justify-between items-center">
 					<div className="flex items-center flex-shrink-0">
@@ -55,7 +72,7 @@ const Navbar = () => {
 							))}
 						</ul>
 						<div className="flex space-x-6">
-							<Button text="Zadzwon do nas" primary />
+							<Button text={btnText.phone} primary />
 						</div>
 					</div>
 				)}

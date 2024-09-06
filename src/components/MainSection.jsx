@@ -6,6 +6,7 @@ import Car3 from '../assets/car6.jpg';
 import Car4 from '../assets/car_dost1.jpeg';
 import Car5 from '../assets/car_dost2.jpg';
 import Car6 from '../assets/car_dost3.jpg';
+import { carsType, mainSectionText } from '../constants';
 var settings = {
 	dots: true,
 	infinite: true,
@@ -32,43 +33,36 @@ var settings = {
 	],
 };
 const MainSection = () => {
-	const [option, setOption] = useState('1');
+	const [option, setOption] = useState(1);
 
 	return (
 		<div className="w-full" id="mainSection">
 			<header className="container flex flex-col  justify-center items-start m-auto px-4  lg:max-w-[1440px]">
 				<p className="text-button text-xl font-roboto-condensed">
-					Prezentacja firmy
+					{mainSectionText.text}
 				</p>
 				<h1 className="text-5xl pt-1 font-bebas-neue">
-					ZOBACZ NASZA GALERIE ZDJEC
+					{mainSectionText.title}
 				</h1>
 				<div className="flex gap-10 pt-10 font-bold">
-					<button
-						onClick={() => setOption('1')}
+					{carsType.map((item) => (
+						<button
+						onClick={() => setOption(item.id)}
 						className={
-							option === '1'
+							option === item.id
 								? 'text-button border-b-2 border-button '
 								: 'text-black border-b-2 border-primary'
 						}
 					>
-						Samochody osobowe
+						{item.name}
 					</button>
-					<button
-						onClick={() => setOption('2')}
-						className={
-							option === '2'
-								? 'text-button border-b-2 border-button'
-								: 'text-black border-b-2 border-primary'
-						}
-					>
-						Samochody dostawcze
-					</button>
+					))}
+					
 				</div>
 			</header>
 			<section className="container mx-auto py-10 px-4 lg:max-w-[1440px]">
 				<div className="">
-					{option === '1' && (
+					{option === 1 && (
 						<div className="w-full ">
 							<Slider {...settings} className="text-center">
 								<img src={Car} className="w-full " alt="car1" />
@@ -85,7 +79,7 @@ const MainSection = () => {
 							</Slider>
 						</div>
 					)}
-					{option === '2' && (
+					{option === 2 && (
 						<div className="w-full">
 							<Slider {...settings} className="text-center">
 								<img

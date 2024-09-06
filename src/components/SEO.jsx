@@ -15,11 +15,13 @@ const SEO = () => {
 						{showMoreFirst ? seoData.desc : seoData.short}
 					</p>
 					<button
-						className="border-b-2 w-fit"
+						className="border-b-2 w-fit py-1"
 						onClick={() => setShowMoreFirst(!showMoreFirst)}
 					>
-						{showMoreFirst ? 'Zwin' : 'Rozwin'}
-						<span className="text-xl">↓</span>
+						{showMoreFirst ? seoData.btn.zwin : seoData.btn.rozwin}
+						<span className="text-xl">
+							{showMoreFirst ? '  ↑' : '  ↓'}{' '}
+						</span>
 					</button>
 				</div>
 				<div className="flex flex-col container gap-y-10  lg:px-0 lg:w-[50%]">
@@ -29,11 +31,13 @@ const SEO = () => {
 
 					<p>{showMoreSecond ? seoData.desc : seoData.short}</p>
 					<button
-						className="border-b-2 w-fit"
+						className="border-b-2 w-fit py-1"
 						onClick={() => setShowMoreSecond(!showMoreSecond)}
 					>
-						{showMoreSecond ? 'Zwin' : 'Rozwin'}
-						<span className="text-xl">↓</span>
+						{showMoreSecond ? seoData.btn.zwin : seoData.btn.rozwin}
+						<span className="text-xl">
+							{showMoreSecond ? '  ↑' : '  ↓'}{' '}
+						</span>
 					</button>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 import Image from '../assets/hero.png';
 import Background from '../assets/bitmap2.png';
-import { scrollInto } from '../constants';
+import { btnText, heroData, scrollInto } from '../constants';
 import { Button } from './Button';
 const Hero = () => {
 	return (
@@ -13,15 +13,15 @@ const Hero = () => {
 			<div className="container mx-auto px-4 lg:max-w-[1440px]">
 				<div className="flex flex-col ">
 					<div className="text-7xl text-secondary text-center lg:text-start font-bebas-neue ">
-						<p>SPRZEDAJEMY SAMOCHODY</p>
-						<p>Z EUROPY</p>
+						<p>{heroData.title.split(' ').slice(0, 2).join(' ')}</p>
+						<p>{heroData.title.split(' ').slice(2, 4).join(' ')}</p>
 					</div>
 					<div className="pt-10 text-lg font-roboto-condensed text-center lg:text-start">
 						<p className=" text-secondary">
-							Kup komfortowy pojazd, aby kazda podroz
+							{heroData.desc.split(' ').slice(0, 6).join(' ')}
 						</p>
 						<p className="text-secondary">
-							byla wyjatkowym przezyciem
+							{heroData.desc.split(' ').slice(6, 10).join(' ')}
 						</p>
 					</div>
 					<div className="pt-10 flex gap-5 flex-row justify-center lg:justify-start ">
@@ -31,10 +31,10 @@ const Hero = () => {
 								scrollInto('mainSection');
 							}}
 						>
-							Zobacz zdjecia
+							{btnText.photo}
 						</button>
 
-						<Button secondary text="Zadzwon do nas" />
+						<Button secondary text={btnText.phone} />
 					</div>
 				</div>
 			</div>
