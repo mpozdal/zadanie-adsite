@@ -15,7 +15,15 @@ module.exports = {
 				'roboto-condensed': ['"Roboto Condensed"'],
 				'bebas-neue': ['"Bebas Neue"'],
 			},
+			listStyleType: {
+				none: 'none',
+				disc: 'disc',
+				decimal: 'decimal',
+				square: 'square',
+				roman: 'upper-roman',
+			},
 			colors: {
+				grey: '#DCDCDC',
 				button: '#0147FF',
 				primary: '#F7f7f7',
 				secondary: '#282828',
